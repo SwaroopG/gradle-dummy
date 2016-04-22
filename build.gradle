@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+jar {
+    baseName = 'gradle-dummy'
+    version =  '1.0'
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    compile 'commons-collections:commons-collections:3.2'
+	compile 'org.apache.commons:commons-lang3:3.4'
+	compile 'org.apache.logging.log4j:log4j-core:2.5'
+
+    testCompile 'junit:junit:4.12'
+}
