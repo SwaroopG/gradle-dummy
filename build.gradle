@@ -1,19 +1,29 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin:'application'
+
 
 sourceCompatibility = 1.7
 jar {
     baseName = 'gradle-dummy'
     version =  '1.0'
+    manifest {
+        mainClassName = "com.poorjar.http.HttpTestApp"
+        attributes 'Main-Class': 'com.poorjar.http.HttpTestApp'
+    }
 }
 
 repositories { mavenCentral() }
 
 dependencies {
     compile 'commons-collections:commons-collections:3.2'
-	compile 'org.apache.commons:commons-lang3:3.4'
-	compile 'org.apache.logging.log4j:log4j-core:2.5'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.apache.logging.log4j:log4j-core:2.5'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'com.ning:async-http-client:1.9.38'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'org.slf4j:slf4j-log4j12:1.7.21'
 
     testCompile 'junit:junit:4.12'
 }
